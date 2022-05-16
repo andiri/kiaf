@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'KIAF'
-copyright = '2022, GSDC'
-author = 'Andiri'
+project = 'KIAF User Guide'
+copyright = '2020, GSDC'
+author = 'kong91'
 
 release = '2.0'
 version = '2.0.1'
