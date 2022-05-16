@@ -135,7 +135,7 @@ ALICE 환경 로드 명령어
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ALICE 환경을 로드하는 과정은 ``kiafenv`` 명령어로 정의 되어 있습니다.
-이 명령어는 :ref:`installation`절에서 설정한 버전을 기반으로 ALICE 환경을 로드합니다.
+이 명령어는 :ref:`alicepackage` 절에서 설정한 버전을 기반으로 ALICE 환경을 로드합니다.
     
 .. code-block:: console    
 
