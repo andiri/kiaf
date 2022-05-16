@@ -48,6 +48,7 @@ windows 환경에서는 putty나 ssh secure shell client 등 ssh 접속 유틸�
 리눅스 환경의 터미널에서 아래의 명령어와 옵션을 이용하면 KIAF 서버에 접속이 가능합니다.
 
 .. code-block:: console
+
    ssh -p #### 계정명@<kiaf_url>
 
 비밀번호 설정
@@ -99,6 +100,7 @@ windows는 putty나 ssh secure shell client 등에서 제공하는 파일전송 
 리눅스 환경에서는 scp나 sftp 명령어를 이용합니다.
 
 .. code-block:: console
+
    scp -P #### /path/to/src/file 계정명@<kiaf_url>:/path/to/dst/file
   
 ALICE 환경 로딩
@@ -120,11 +122,13 @@ $HOME/.alice env/alice env.conf 파일을 vi, emacs 등의 텍스트 편집기�
 아래는 AliPhysics 설정 예시입니다.
 
 .. code-block:: console
+
    export ALIPHYSICS_VERSION="vAN-20160328-1"
 
 다음은 AliRoot 설정 예시입니다.
 
 .. code-block:: console
+
    export ALICE_ROOT_VERSION="v5-07-20-4"
    
 ALICE 환경 로드 명령어
@@ -134,6 +138,7 @@ ALICE 환경을 로드하는 과정은 kiafenv 명령어로 정의 되어 있습
 이 명령어는 `alicepackage`_절에서 설정한 버전을 기반으로 ALICE 환경을 로드합니다.
     
 .. code-block:: console    
+
    [계정명@<kiaf_url>  ̃]$ kiafenv
    Load the ALICE environment
    Set the AliPhysics::vAN-20160328-1 environment
