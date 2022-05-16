@@ -152,7 +152,7 @@ ALICE 환경을 로드하는 과정은 ``kiafenv`` 명령어로 정의 되어 �
    
 ``kiafenv`` 명령어는 기본적으로 ALICE 환경을 로드하지만 옵션으로 ``-t`` 또는 ``--token``과 ``-p`` 또는 ``--pod``가 존재하며, t옵션은 Alien token을 발급하고 p옵션은 PoD 환경을 로드합니다. 
 또한 ``-h`` 또는 ``--help`` 옵션을 입력하여 도움말을 출력하는것도 가능합니다. 
-모든옵션은 동시에 사용이 가능합니다. 
+**모든옵션은 동시에 사용이 가능합니다.** 
 옵션을 통해 사용하는 token과 PoD에 관해서는 각각 :ref:`alientoken`절과 :ref:`proofusage`절에서 설명합니다.
 
 .. code-block:: console
