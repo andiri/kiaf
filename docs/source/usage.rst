@@ -114,11 +114,11 @@ ALICE 패키지
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 ALICE 패키지는 CERN에서 배포하는 CVMFS 를 통해 제공 됩니다. 
-따라서 KIAF에서 사 용가능한 AliRoot 및 AliPhysics의 버젼은 http://alimonitor.cern.ch/packages 에서 확인이 가능합니다. 
-위 사이트를 통해 사용하고자 하는 버젼의 CVMFS status가 Avail- able인지 확인 하시기 바랍니다. 
+따라서 KIAF에서 사 용가능한 AliRoot 및 AliPhysics의 버젼은 `Packages available in Grid <https://alimonitor.cern.ch/packages/>`_ 에서 확인이 가능합니다. 
+위 사이트를 통해 사용하고자 하는 버젼의 CVMFS status가 Available인지 확인 하시기 바랍니다. 
 사용이 불가능한 버젼을 지정한 경우 AliRoot를 실행하는 과정에서 에러가 발생하며 정상적으로 실행 되지 않습니다.
 사용하고자하는 버전을 결정한 뒤에는 KIAF의 개별 설정파일에서 해당 버전을 지정해 야 합니다. 
-$HOME/.alice env/alice env.conf 파일을 vi, emacs 등의 텍스트 편집기를 통해 수정하면 사용하고자하는 버전이 지정됩니다.
+``$HOME/.alice env/alice env.conf`` 파일을 vi, emacs 등의 텍스트 편집기를 통해 수정하면 사용하고자하는 버전이 지정됩니다.
 아래는 AliPhysics 설정 예시입니다.
 
 .. code-block:: console
@@ -135,7 +135,7 @@ ALICE 환경 로드 명령어
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 ALICE 환경을 로드하는 과정은 kiafenv 명령어로 정의 되어 있습니다. 
-이 명령어는 `alicepackage`_절에서 설정한 버전을 기반으로 ALICE 환경을 로드합니다.
+이 명령어는 :ref:`alicepackage`절에서 설정한 버전을 기반으로 ALICE 환경을 로드합니다.
     
 .. code-block:: console    
 
