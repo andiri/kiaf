@@ -11,7 +11,7 @@ KIAF 이용 안내
 ^^^^^^^^^^^^^^^^^
 
 계정 신청서는 마지막 페이지의 계정 신청서 양식을 사용하거나 KIAF 담당자에게 양식 을 요청하여 작성합니다. 
-항목별 자세한 작성방법은 48페이지의 부록A을 참고하여 주시기 바랍니다.
+항목별 자세한 작성방법은 :doc:`appendix_a`을 참고하여 주시기 바랍니다.
 개인 정보보호법과 관련하여 개인정보 제공 및 이용 동의서를 제출받고 있습니다. 
 해당 양식은 마지막 페이지의 개인정보 제공 및 이용 동의서 양식을 이용해주시기 바랍니다.
 
@@ -23,7 +23,7 @@ Account Name은 사용자 계정명이 될부분으로 알아보기 쉽게 작�
    
 계정이 생성되면 임시 비밀번호와 함께 안내메일이 신청서 상의 사용자 Email로 전송 됩니다.
 작성한 신청서는 KISTI KIAF 담당자에게 제출합니다. 
-계정 요청 담당자 : kong91@kisti.re.kr
+계정 요청 담당자 : kong91<no_spam>kisti.re.kr
 
 
 KIAF 서버 사용법
@@ -36,9 +36,9 @@ KIAF 서버 접속
 ^^^^^^^^^^^^^^^^^^^
 
 사용자 계정 신청 절차를 따라 계정을 요청 하여 관리자로 부터 임시 비밀번호를 받으 면, 발급 받은 계정과 임시 비밀번호를 이용하여 KIAF 서버에 접속이 가능합니다. 
-서버의 주소는 <kiaf_url> 입니다. 
-서버의 보안을 위해 ssh 접속 포트를 ####번으로 설정되어 있습니다. (기본 접속 포트인 ##번 포트로는 접속이 불가능 합니다.) 
-windows 환경에서는 putty나 ssh secure shell client 등 ssh 접속 유틸리티를 이용하여 KIAF 서버에 접속이 가능 합니다.
+서버의 주소는 ``<kiaf_url>`` 입니다. 
+서버의 보안을 위해 ``ssh`` 접속 포트를 ``####``번으로 설정되어 있습니다. (기본 접속 포트인 ``##``번 포트로는 접속이 불가능 합니다.) 
+windows 환경에서는 ``putty``나 ssh secure shell client 등 ssh 접속 유틸리티를 이용하여 KIAF 서버에 접속이 가능 합니다.
 
 .. note::
 
@@ -69,9 +69,9 @@ windows 환경에서는 putty나 ssh secure shell client 등 ssh 접속 유틸�
 
 .. note::
 
-   접속이 되면 첫 위치는 사용자의 홈 디렉토리 입니다. 사용자의 홈 디렉토리는 경로는 /alice/home/계정명 입니다.
+   접속이 되면 첫 위치는 사용자의 홈 디렉토리 입니다. 사용자의 홈 디렉토리는 경로는 ``/alice/home/계정명`` 입니다.
    
-이후 패스워드 만료등의 이유로 비밀번호를 다시 변경하고자할때는 passwd 명령을 통해 비밀번호 변경이 가능합니다.
+이후 패스워드 만료등의 이유로 비밀번호를 다시 변경하고자할때는 ``passwd`` 명령을 통해 비밀번호 변경이 가능합니다.
 
 .. code-block:: console
 
@@ -96,8 +96,8 @@ windows 환경에서는 putty나 ssh secure shell client 등 ssh 접속 유틸�
 ^^^^^^^^^^^^^^^^^
 
 일반적으로 사용하는 GUI환경이 아닌 KIAF과 본인의 워크스테이션간에 데이터를 전송 하려면 전송 툴이나 명령어를 사용하여야합니다. 
-windows는 putty나 ssh secure shell client 등에서 제공하는 파일전송 툴을 이용하면 됩니다. 
-리눅스 환경에서는 scp나 sftp 명령어를 이용합니다.
+windows는 ``putty``나 ssh secure shell client 등에서 제공하는 파일전송 툴을 이용하면 됩니다. 
+리눅스 환경에서는 ``scp``나 ``sftp`` 명령어를 이용합니다.
 
 .. code-block:: console
 
@@ -118,7 +118,7 @@ ALICE 패키지는 CERN에서 배포하는 CVMFS 를 통해 제공 됩니다.
 위 사이트를 통해 사용하고자 하는 버젼의 CVMFS status가 Available인지 확인 하시기 바랍니다. 
 사용이 불가능한 버젼을 지정한 경우 AliRoot를 실행하는 과정에서 에러가 발생하며 정상적으로 실행 되지 않습니다.
 사용하고자하는 버전을 결정한 뒤에는 KIAF의 개별 설정파일에서 해당 버전을 지정해 야 합니다. 
-``$HOME/.alice env/alice env.conf`` 파일을 vi, emacs 등의 텍스트 편집기를 통해 수정하면 사용하고자하는 버전이 지정됩니다.
+``$HOME/.alice env/alice env.conf`` 파일을 ``vi``, ``emacs`` 등의 텍스트 편집기를 통해 수정하면 사용하고자하는 버전이 지정됩니다.
 아래는 AliPhysics 설정 예시입니다.
 
 .. code-block:: console
@@ -143,7 +143,26 @@ ALICE 환경을 로드하는 과정은 ``kiafenv`` 명령어로 정의 되어 �
    Load the ALICE environment
    Set the AliPhysics::vAN-20160328-1 environment
 
-이때 로드되는 환경의 AliRoot 혹은 AliPhysics의 버젼은 $HOME/.alice env/alice env.conf 에서 정의됩니다.
+이때 로드되는 환경의 AliRoot 혹은 AliPhysics의 버젼은 ``$HOME/.alice env/alice env.conf`` 에서 정의됩니다.
+
+.. code-block:: console
+
+   [계정명@<kiaf_url>  ̃]$ cat $HOME/.alice_env/alice_env.conf
+   export ALIPHYSICS_VERSION="vAN-20160328-1"
+   
+``kiafenv`` 명령어는 기본적으로 ALICE 환경을 로드하지만 옵션으로 ``-t`` 또는 ``--token``과 ``-p`` 또는 ``--pod``가 존재하며, t옵션은 Alien token을 발급하고 p옵션은 PoD 환경을 로드합니다. 
+또한 ``-h`` 또는 ``--help`` 옵션을 입력하여 도움말을 출력하는것도 가능합니다. 
+모든옵션은 동시에 사용이 가능합니다. 
+옵션을 통해 사용하는 token과 PoD에 관해서는 각각 :ref:`alientoken`절과 :ref:`proofusage`절에서 설명합니다.
+
+.. code-block:: console
+
+   [계정명@<kiaf_url>  ̃]$ kiafenv -h
+   This command load the ALICE environment for KIAF
+   options:
+    -p, --pod    : Load the PoD environment
+    -t, --token  : Create alien session token
+    -h, --help   : Display help
 
 
 .. _installation:
