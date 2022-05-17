@@ -23,7 +23,6 @@ Contents
    miscellaneous
    references
    appendix_a
-   appendix_b
    appendix_c
    appendix_d
    appendix_e
