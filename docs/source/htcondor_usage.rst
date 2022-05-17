@@ -50,7 +50,7 @@ HTCondor 사용법 안내
 * **when_to_transfer_output** 은 output 파일을 SN으로 전송하는 시점을 선택가능. 이는 ``ON_EXIT`` 와 ``ON_EXIT_OR_EVICT`` 의 값을 가짐
   * ``ON_EXIT`` : 작업이 종료되었을 때에만 전송
   * ``ON_EXIT_OR_EVICT`` : 작업이 종료되었거나 취소되었을 때 전송
-* **arguments** : **executable**의 스크립트에 사용할 변수(따옴표 안에서 스페이스로 구별)
+* **arguments** : **executable** 의 스크립트에 사용할 변수(따옴표 안에서 스페이스로 구별)
 * **output_destination** : 샌드 박스의 전체 출력물을 전송하기위한 위치를 지정
 * **Request_cpus** : 기본값은 1 이며, 사용자가 필요로 하는 ``CPU`` 의 갯수
 * **Request_memory** : 작업에 필요로하는 ``RAM`` 의 크기이며, KB, MB, GB 등으로 지정
@@ -71,7 +71,7 @@ condor_submit
 * HTCondor에서 작업을 제출하는 가장 기본적인 명령어
 * 제출할 작업명세파일을 변수로 사용 
 
-.. code_block:: console
+.. code-block:: console
 
   condor_submit condor.script
   
@@ -210,14 +210,14 @@ condor_q 자주 사용되는 옵션
 
     ∗ ``-af:h`` 나 ``-af:lrng`` 옵션을 통해 출력 메시지를 변경 가능 
     
-.. code-block:: condole
+.. code-block:: console
   :caption: -af:h
   
   [계정명@<kiaf_url>  ̃]$ condor_q -af:h ClusterId RequestCpus RemoteHost
   ClusterId ProcId RequestCpus RequestMemory
   55526 0 1 2930
 
-.. code-block:: condole
+.. code-block:: console
   :caption: -af:lrng
 
   [계정명@<kiaf_url>  ̃]$ condor_q -af:lrng ClusterId RequestCpus RemoteHost
