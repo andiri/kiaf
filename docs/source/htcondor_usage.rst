@@ -87,6 +87,7 @@ condor_submit 자주 사용되는 옵션
 """""""""""""""""""""""""""""""""""""""""""
 
 (옵션에 사용되는 값은 보통 작업명세파일에 기입하여 사용)
+
 * ``-append`` : 추가적으로 명세파일의 값을 추가하거나 일시적으로 변경할때 사용 
 
 condor_submit_dag 소개
@@ -225,25 +226,19 @@ condor_q 자주 사용되는 옵션
   * 기존 ``-format`` 옵션을 완전히 대체 가능
   * 기존 포맷은 해당 ``ClassAd`` 의 데이터 형태를 알아야 확인 가능
   * ``-autoformat`` 옵션은 해당 포맷의 데이터를 자동으로 확인
-  * 예) ``ClusterID`` , ``RequestCpus`` , ``RemoteHost`` 정보를 확인할 경우 
 
 .. code-block:: console
+  :caption: 예) ``ClusterID`` , ``RequestCpus`` , ``RemoteHost`` 정보를 확인할 경우 
 
-  [계정명@<kiaf_url>  ̃]$ condor_q -af:h ClusterId RequestCpus RemoteHost
+  [계정명@<kiaf_url>  ̃]$ condor_q -af ClusterId RequestCpus RemoteHost
   55526 0 1 2930
 
-∗ ``-af:h`` 나 ``-af:lrng`` 옵션을 통해 출력 메시지를 변경 가능 
-    
 .. code-block:: console
-  :caption: -af:h
+  :caption: ``-af:h`` 나 ``-af:lrng`` 옵션을 통해 출력 메시지를 변경 가능 
   
   [계정명@<kiaf_url>  ̃]$ condor_q -af:h ClusterId RequestCpus RemoteHost
   ClusterId ProcId RequestCpus RequestMemory
   55526 0 1 2930
-
-.. code-block:: console
-  :caption: -af:lrng
-
   [계정명@<kiaf_url>  ̃]$ condor_q -af:lrng ClusterId RequestCpus RemoteHost
   ClusterId = 55526
   ProcId = 0
@@ -395,7 +390,7 @@ condor_status 소개
 .. code-block:: console
 
   [kong91@kiaf-ui  ̃]$ condor_status
-  Name  OpSys      Arch   State     Activity LoadAv Mem ActvtyTime
+  Name                          OpSys      Arch   State     Activity LoadAv   Mem ActvtyTime
   slot1@kiaf-wn1000.sdfarm.kr   LINUX      X86_64 Unclaimed Idle      0.000 96580 8+00:46:01
   slot2@kiaf-wn1000.sdfarm.kr   LINUX      X86_64 Unclaimed Idle      0.000 48290 8+00:46:14
   slot3@kiaf-wn1000.sdfarm.kr   LINUX      X86_64 Unclaimed Idle      0.000 48290 8+00:46:14
