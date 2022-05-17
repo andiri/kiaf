@@ -32,4 +32,13 @@ Contents
 .. toctree::
 
    usage
-   api
+   dataset
+   htcondor_usage
+   htcondor_jdl_ex
+   miscellaneous
+   references
+   appendix_a
+   appendix_b
+   appendix_c
+   appendix_d
+   appendix_e
