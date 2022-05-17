@@ -35,4 +35,3 @@ Contents
    appendix_c
    appendix_d
    appendix_e
-   api
