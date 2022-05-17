@@ -11,14 +11,6 @@ KISTI에서 제공하는 KIAF는 KoALICE 연구자 그룹의 고에너지물리 
 책에서 이해가 되지 않는 부분이나 오탈자와 관련해서는 작성자에게 연락 주시기 바랍니다.
 부가적으로 GSDC에서 서비스중인 HTCondor 통합팜에 통합되어 있으며, 여유 분석머 신을 공유하여 할당된 자원량 이상 사용이 가능한 환경이 구축되어 있습니다.
 
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
-
-
-
 Contents
 --------
 
