@@ -190,7 +190,7 @@ from 활용하기
   queue filename from datalist
 
 * **input_files** 실제 분석에 사용되는 C, cxx, h 파일 등 모든 파일명을 적어주시면 됩니다. 마찬가지로 *runCondor.sh* 와 같은 경로에 위치하지 않은 경우 절대경로를 적어 주셔야 합니다. 파일은 콤마(,)로 구분하여 여러개를 적어주셔도 무방 합니다.
-* **out_file** 결과를 통해 얻는 ``root`` 파일의 이름으로 여러개인 경우 콤마(,)로 구분합니다. 최종 결과 파일은 *runCondor.sh* 와 같은 위치에 *merge#_work_dir_out_file*명으로 생성 됩니다.
+* **out_file** 결과를 통해 얻는 ``root`` 파일의 이름으로 여러개인 경우 콤마(,)로 구분합니다. 최종 결과 파일은 *runCondor.sh* 와 같은 위치에 *merge\#_work_dir_out_file*명으로 생성 됩니다.
 
 .. note::
 
@@ -203,7 +203,6 @@ DAGMan은 Directed Acyclic Graph Manage의 약자로 의존성이 있는 작업�
 DAGMan이 사용하는 DAG에 나타내는 순서대로 HTCondor에 작업을 제출하고 결과를 처리하도록 관리합니다.
 
 .. |diamond_dag| image:: pic/dag.png
-  :caption: 다이아몬드 형식의 DAG
   :alt: 다이아몬드 형식의 DAG
 
 그림 |diamond_dag| 과 같이 종속 관계가 있는 A,B,C,D 작업을 설정 할 수 있습니다. 
