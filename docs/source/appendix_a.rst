@@ -8,8 +8,16 @@ GSDC 사용자 계정 신청서 양식
   :alt: GSDC 사용자 계정 신청서 양식
 
   GSDC 사용자 계정 신청서 양식
+
+.. _privacy_agreement:
+
+.. figure:: pic/Privacy_Agreement.png
+  :align: center
+  :alt: 개인정보 제공 및 이용 동의서
   
-위 :numref:`gsdc_subscription<GSDC 사용자 계정 신청서 양식>` 을 출력하여 작성합니다. 
+  개인정보 제공 및 이용 동의서
+
+위 :numref:`gsdc_subscription<GSDC 사용자 계정 신청서 양식>` 과 :numref:`privacy_agreement<개인정보 제공 및 이용 동의서>` 을 출력하여 작성합니다. 
 작성 항목은 아래와 같습니다.
 
 1. User’s Information 계정 발급을 요청하는 사용자의 정보를 입력합니다.
