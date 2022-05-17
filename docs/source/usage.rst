@@ -152,7 +152,7 @@ ALICE 환경을 로드하는 과정은 ``kiafenv`` 명령어로 정의 되어 �
    
 ``kiafenv`` 명령어는 기본적으로 ALICE 환경을 로드하지만 옵션으로 ``-t`` 또는 ``--token`` 과 ``-p`` 또는 ``--pod`` 가 존재하며, t옵션은 Alien token을 발급하고 p옵션은 PoD 환경을 로드합니다. 
 또한 ``-h`` 또는 ``--help`` 옵션을 입력하여 도움말을 출력하는것도 가능합니다. 
-**모든옵션은 동시에 사용이 가능합니다.** 
+**모든 옵션은 동시에 사용이 가능합니다.** 
 옵션을 통해 사용하는 token과 PoD에 관해서는 각각 :ref:`alientoken` 절과 :ref:`proofusage` 절에서 설명합니다.
 
 .. code-block:: console
@@ -163,36 +163,3 @@ ALICE 환경을 로드하는 과정은 ``kiafenv`` 명령어로 정의 되어 �
     -p, --pod    : Load the PoD environment
     -t, --token  : Create alien session token
     -h, --help   : Display help
-
-
-.. _installation:
-
-Installation
-------------
-
-To use Lumache, first install it using pip:
-
-.. code-block:: console
-
-   (.venv) $ pip install lumache
-
-Creating recipes
-----------------
-
-To retrieve a list of random ingredients,
-you can use the ``lumache.get_random_ingredients()`` function:
-
-.. autofunction:: lumache.get_random_ingredients
-
-The ``kind`` parameter should be either ``"meat"``, ``"fish"``,
-or ``"veggies"``. Otherwise, :py:func:`lumache.get_random_ingredients`
-will raise an exception.
-
-.. autoexception:: lumache.InvalidKindError
-
-For example:
-
->>> import lumache
->>> lumache.get_random_ingredients()
-['shells', 'gorgonzola', 'parsley']
-
