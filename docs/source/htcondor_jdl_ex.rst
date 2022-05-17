@@ -194,7 +194,7 @@ from 활용하기
 
 .. note::
 
-  \#은 merge 번호로 out_files 에 적어준 순서로 0부터 차례로 증가합니다.
+  \#은 merge 번호로 *out_files*에 적어준 순서로 0부터 차례로 증가합니다.
   
 DAGMan 사용법
 -------------------------
@@ -210,7 +210,7 @@ DAGMan이 사용하는 DAG에 나타내는 순서대로 HTCondor에 작업을 �
 
   다이아몬드 형식의 DAG
   
-그림 :numref:`diamond_dag` 과 같이 종속 관계가 있는 A,B,C,D 작업을 설정 할 수 있습니다. 
+:numref:`diamond_dag` 과 같이 종속 관계가 있는 A, B, C, D 작업을 설정할 수 있습니다. 
 A작업이 끝나면 B와 C작업이 시작되고 B,C 작업이 모두 끝나면 D작업이 시작됩니다. 
 이와 같은 순서를 가진 프로그램을 DAG파일로 설정하면 다음과 같습니다.
  
@@ -224,7 +224,7 @@ A작업이 끝나면 B와 C작업이 시작되고 B,C 작업이 모두 끝나면
   PARENT B C CHILD D
   
 작업명세파일을 각각 정의해주고 작업간 종속 관계를 **PARENT** 와 **CHILD** 로 정의 합니다. 
-그리고 작업 제출 명령어로는 ``condor_submit``이 아닌 ``condor_submit_dag`` 을 사용합니다.
+그리고 작업 제출 명령어로는 ``condor_submit`` 이 아닌 ``condor_submit_dag`` 을 사용합니다.
 
 간단한 DAG 예시
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -240,8 +240,7 @@ A작업이 끝나면 B와 C작업이 시작되고 B,C 작업이 모두 끝나면
   Error                   = A.error
   Log = A.log
   
-  Queue
-  
+  Queue  
   [계정명@<kiaf_url>  ̃]$ vim B.condor
   Executable              = dag.sh
   Universe                = vanilla
@@ -297,6 +296,7 @@ A작업이 끝나면 B와 C작업이 시작되고 B,C 작업이 모두 끝나면
 .. code-block:: console
 
   [계정명@<kiaf_url>  ̃]$ condor_submit_dag condor.dag
+  
   -----------------------------------------------------------------------
   File for submitting this DAG to HTCondor           : condor.dag.condor.sub
   Log of DAGMan debugging messages                 : condor.dag.dagman.out
@@ -322,7 +322,7 @@ A작업이 끝나면 B와 C작업이 시작되고 B,C 작업이 모두 끝나면
   Total for kong91: 3 jobs; 0 completed, 0 removed, 0 idle, 3 running, 0 held, 0 suspended
   Total for all users: 3 jobs; 0 completed, 0 removed, 0 idle, 3 running, 0 held, 0 suspended
 
-6. 작업이 완료되면 head 명령을 통하여 결과를 확인합니다.
+6. 작업이 완료되면 ``head`` 명령을 통하여 결과를 확인합니다.
 
 .. code-block:: console
 
