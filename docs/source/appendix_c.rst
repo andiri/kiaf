@@ -16,8 +16,8 @@
 * **사용예시** $(file)이 */home/work/recipe.lst* 와 같을때
 
   ∗ $Fp(file) → /home/work/
-  ∗ $Fqp(file) → “/home/work” 
-  ∗ $Fqpa(file) → ‘/home/work’ 
+  ∗ $Fqp(file) → \"/home/work\"
+  ∗ $Fqpa(file) → \'/home/work\'
   ∗ $Fd(file) → work/
   ∗ $Fdb(file) → work
   ∗ $Fn(file) → recipe
