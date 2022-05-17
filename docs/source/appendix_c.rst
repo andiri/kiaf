@@ -14,12 +14,12 @@
   * –x: 파일의 확장자를 점을 포함하여 출력
   
 * **사용예시** $(file)이 */home/work/recipe.lst* 와 같을때
-
-  ∗ $Fp(file) → /home/work/
-  ∗ $Fqp(file) → \"/home/work\"
-  ∗ $Fqpa(file) → \'/home/work\'
-  ∗ $Fd(file) → work/
-  ∗ $Fdb(file) → work
-  ∗ $Fn(file) → recipe
-  ∗ $Fx(file) → .lst
-  ∗ $Fnx(file) → recipe.lst
+  
+  * $Fp(file) → /home/work/
+  * $Fqp(file) → \"/home/work\"
+  * $Fqpa(file) → \'/home/work\'
+  * $Fd(file) → work/
+  * $Fdb(file) → work
+  * $Fn(file) → recipe
+  * $Fx(file) → .lst
+  * $Fnx(file) → recipe.lst
