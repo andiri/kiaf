@@ -3,7 +3,7 @@ GSDC 사용자 계정 신청서 양식
 
 .. _gsdc_subscription:
 
-.. figure:: pic/GSDC_Subscription_Form.png
+.. figure:: pic/gsdc_sub_form.png
   :align: center
   :alt: GSDC 사용자 계정 신청서 양식
 
