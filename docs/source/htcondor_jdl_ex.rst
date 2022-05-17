@@ -74,7 +74,9 @@ Local job을 Condor job으로 수행 시키는 스크립트는 */tutorial* 디�
 이 리스트 중에 AliRoot에서 실행되는 매크로는 *runAnalysis.C* 파일이며, *AddMyTask.C* , *AliAnalysisTaskMyTask.cxx* , *AliAnalysisTaskMyTask.h* 은 *runAnalysis.C* 와 함께 분석에 사용 되는 파일입니다. 
 *sim_LHC13d3_195675_AOD159.txt* 은 분석할 데이터의 위치 리스트를 가지고 있는 파일입니다. :ref:`condor_script` 에서 살펴 보았듯이 *runCondor.sh* 은 HTCondor 잡을 수행하기 위한 스크립트 이며, 실제 잡을 실행 시키기 위해서는 *runCondor.sh* 파일을 실행 시키면 됩니다. 
 이 분석 예제는 특별한 수정 없이 바로 실행이 가능하며 특별한 에러없이 실행됩니다.
+
 **이때 *runCondor.sh* 는 *runAnalysis.C* 의 인풋 파일을 작게 나누어 병렬 계산을 도와주는 스크립트 입니다. 즉, *runAnalysis.C* 매크로 자체의 에러가 발생한다면 *runCondor.sh* 를 실행할 때에도 에러가 발생하니 local test를 먼저 수행하시길 권장합니다.**
+
 ``source runCondor.sh`` 또는 ``./runCondor.sh`` 명령을 통해 스크립트를 실행하면 아래와 같은 결과를 터미널을 통해 볼 수 있습니다.
 
 .. code-block:: console
@@ -166,6 +168,7 @@ maching의 결과를 변수로 이용하여 단순 반복적인 작업을 간단
   universe                = vanilla
   executable              = analysis
   arguments               = $(filename)
+
   queue filename matching files *.dat
 
 from 활용하기
@@ -174,9 +177,7 @@ from 활용하기
 파일에 입력된 값을 라인별로 읽어 변수로 이용하여 단순 반복적인 작업을 간단히 작성하도록 도와줍니다. 
 기본적인 구조는 아래와 같습니다.
 
-.. code-block:: console
-
-  queue [<int>] [<list of varnames>] from [slice] <file name>
+ queue [<int>] [<list of varnames>] from [slice] <file name>
   
 위 방식을 활용하여 datalist 파일의 값을 변수로 받아 analysis로 분석하는 샘플을 만들어 보도록 하겠습니다.
 
@@ -185,4 +186,167 @@ from 활용하기
   universe                = vanilla
   executable              = analysis
   arguments               = $(filename)
+
   queue filename from datalist
+
+* **input_files** 실제 분석에 사용되는 C, cxx, h 파일 등 모든 파일명을 적어주시면 됩니다. 마찬가지로 *runCondor.sh* 와 같은 경로에 위치하지 않은 경우 절대경로를 적어 주셔야 합니다. 파일은 콤마(,)로 구분하여 여러개를 적어주셔도 무방 합니다.
+* **out_file** 결과를 통해 얻는 ``root`` 파일의 이름으로 여러개인 경우 콤마(,)로 구분합니다. 최종 결과 파일은 *runCondor.sh* 와 같은 위치에 *merge#_work_dir_out_file*명으로 생성 됩니다.
+
+.. note::
+
+  \#은 merge 번호로 out_files 에 적어준 순서로 0부터 차례로 증가합니다.
+  
+DAGMan 사용법
+-------------------------
+
+DAGMan은 Directed Acyclic Graph Manage의 약자로 의존성이 있는 작업의 종속성을 나타내는데 사용합니다. 
+DAGMan이 사용하는 DAG에 나타내는 순서대로 HTCondor에 작업을 제출하고 결과를 처리하도록 관리합니다.
+
+.. |diamond_dag| image:: pic/dag.png
+  :caption: 다이아몬드 형식의 DAG
+  :alt: 다이아몬드 형식의 DAG
+
+그림 |diamond_dag| 과 같이 종속 관계가 있는 A,B,C,D 작업을 설정 할 수 있습니다. 
+A작업이 끝나면 B와 C작업이 시작되고 B,C 작업이 모두 끝나면 D작업이 시작됩니다. 
+이와 같은 순서를 가진 프로그램을 DAG파일로 설정하면 다음과 같습니다.
+ 
+.. code-block:: console
+
+  JOB  A  A.condor
+  JOB  B  B.condor
+  JOB  C  C.condor
+  JOB  D  D.condor
+  PARENT A CHILD B C
+  PARENT B C CHILD D
+  
+작업명세파일을 각각 정의해주고 작업간 종속 관계를 **PARENT** 와 **CHILD** 로 정의 합니다. 
+그리고 작업 제출 명령어로는 ``condor_submit``이 아닌 ``condor_submit_dag`` 을 사용합니다.
+
+간단한 DAG 예시
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. 아래와 같이 4개의 작업 명세 파일을 작성합니다.
+
+.. code-block:: console
+
+  [계정명@<kiaf_url>  ̃]$ vim A.condor
+  Executable              = dag.sh
+  Universe                = vanilla
+  Output                  = A.out
+  Error                   = A.error
+  Log = A.log
+  
+  Queue
+  
+  [계정명@<kiaf_url>  ̃]$ vim B.condor
+  Executable              = dag.sh
+  Universe                = vanilla
+  Output                  = B.out
+  Error                   = B.error
+  Log                     = B.log
+  
+  Queue
+  [계정명@<kiaf_url>  ̃]$ vim C.condor
+  Executable              = dag.sh
+  Universe                = vanilla
+  Output                  = C.out
+  Error                   = C.error
+  Log                     = C.log
+  
+  Queue
+  [계정명@<kiaf_url>  ̃]$ vim D.condor
+  Executable              = dag.sh
+  Universe                = vanilla
+  Output                  = D.out
+  Error                   = D.error
+  Log                     = D.log
+
+  Queue
+  
+2. 아래와 같이 bash 스크립트를 작성합니다.
+
+.. code-block:: console
+
+  [계정명@<kiaf_url>  ̃]$ vim dag.sh
+  #! /bin/bash
+  sleep_time=$(( RANDOM % 20 ))
+  echo "Sleep $sleep_time sec"
+  echo "Job Start"
+  date
+  sleep $sleep_time
+  echo "Job End"
+  date
+
+3. 아래와 같이 작업의 순서를 지정할 dag 파일을 작성합니다.
+
+.. code-block:: console
+
+  [계정명@<kiaf_url>  ̃]$ vim condor.dag
+  JOB A A.condor
+  JOB B B.condor
+  JOB C C.condor
+  JOB D D.condor
+  PARENT A B C CHILD D
+
+4. condor submit dag 명령으로 condor.dag을 제출합니다.
+
+.. code-block:: console
+
+  [계정명@<kiaf_url>  ̃]$ condor_submit_dag condor.dag
+  -----------------------------------------------------------------------
+  File for submitting this DAG to HTCondor           : condor.dag.condor.sub
+  Log of DAGMan debugging messages                 : condor.dag.dagman.out
+  Log of HTCondor library output                     : condor.dag.lib.out
+  Log of HTCondor library error messages             : condor.dag.lib.err
+  Log of the life of condor_dagman itself          : condor.dag.dagman.log
+  
+  Submitting job(s).
+  1 job(s) submitted to cluster 8.
+  -----------------------------------------------------------------------
+
+5. ``condor_q`` 명령으로 제출한 작업의 상태를 확인합니다.
+
+.. code-block:: console
+
+  [계정명@<kiaf_url>  ̃]$ condor_q
+  
+  -- Schedd: <kiaf_url> : <ip_address:port?... @ 01/01/70 13:25:51
+  OWNER    BATCH_NAME      SUBMITTED   DONE   RUN    IDLE  TOTAL JOB_IDS
+  계정명     condor.dag+8   1/1 05:26      _      3      _      1  9.0 ... 11.0
+  
+  Total for query: 3 jobs; 0 completed, 0 removed, 0 idle, 3 running, 0 held, 0 suspended
+  Total for kong91: 3 jobs; 0 completed, 0 removed, 0 idle, 3 running, 0 held, 0 suspended
+  Total for all users: 3 jobs; 0 completed, 0 removed, 0 idle, 3 running, 0 held, 0 suspended
+
+6. 작업이 완료되면 head 명령을 통하여 결과를 확인합니다.
+
+.. code-block:: console
+
+  [계정명@<kiaf_url>  ̃]$ head ?.out
+  ==> A.out <==
+  Sleep 4 sec
+  Job Start
+  Wed Jul 24 05:26:51 KST 2019
+  Job End
+  Wed Jul 24 05:26:55 KST 2019
+  
+  ==> B.out <==
+  Sleep 13 sec
+  Job Start
+  Wed Jul 24 05:26:51 KST 2019
+  Job End
+  Wed Jul 24 05:27:04 KST 2019
+  
+  ==> C.out <==
+  Sleep 19 sec
+  Job Start
+  Wed Jul 24 05:26:51 KST 2019
+  Job End
+  Wed Jul 24 05:27:10 KST 2019
+  
+  ==> D.out <==
+  Sleep 6 sec
+  Job Start
+  Wed Jul 24 05:27:21 KST 2019
+  Job End
+  Wed Jul 24 05:27:27 KST 2019
