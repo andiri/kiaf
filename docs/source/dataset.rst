@@ -15,7 +15,7 @@ KIAF에서는 Alien과 같이 그리드에 위치한 데이터셋이 아닌 로�
 
 .. caution:: 
 
-  위 메일은 데이터셋 스테이징을 요청할 때에만 이용하고, 일반적인 문의 는 ``kiaf-support<no_spame>kisti.re.kr`` 를 이용하기를 요청 드립니다.
+  위 메일은 데이터셋 스테이징을 요청할 때에만 이용하고, 일반적인 문의는 ``kiaf-support<NOSPAM>@kisti.re.kr`` 를 이용하기를 요청 드립니다.
 
 요청하신 데이터셋은 ``/xrootfs/alice`` 디렉토리 아래에 ``Alien Catalogue`` 와 같은 경로로 저장 되어 있습니다.
 
