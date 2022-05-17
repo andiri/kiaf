@@ -11,12 +11,10 @@ ALICE 데이터셋 스테이징 요청
 KIAF에서는 Alien과 같이 그리드에 위치한 데이터셋이 아닌 로컬에 위치한 데이터셋을 이용하여 분석을 수행 합니다. 
 따라서 사용자 분석에 필요한 데이터는 담당자에게 요청하여 로컬 디스크로 스테이징 되도록 해야 합니다. 
 데이터셋 스테이징 요청은 메일을 통해 이루 어 집니다. 
-데이터셋 스테이징 요청 메일은 *Data:Sim*, *Period*, *Run Number*, *Variant*, *Pass* 등 필요한 데이터셋의 정보를 기입하여 ``kiaf-data-request<no_spam>kisti.re.kr`` 로 보내 주시면 됩니다. (위 메일은 데이터셋 스테이징을 요청할 때에만 이용하고, 일반적인 문의 는 ``kiaf-support<no_spame>kisti.re.kr`` 를 이용하기를 요청 드립니다.) 
+데이터셋 스테이징 요청 메일은 *Data:Sim*, *Period*, *Run Number*, *Variant*, *Pass* 등 필요한 데이터셋의 정보를 기입하여 ``kiaf-data-request<no_spam>kisti.re.kr`` 로 보내 주시면 됩니다. **위 메일은 데이터셋 스테이징을 요청할 때에만 이용하고, 일반적인 문의 는 ``kiaf-support<no_spame>kisti.re.kr`` 를 이용하기를 요청 드립니다.**
 요청하신 데이터셋은 ``/xrootfs/alice`` 디렉토리 아래에 ``Alien Catalogue`` 와 같은 경로로 저장 되어 있습니다.
 
-For example:
-
-/xrootdfs/alice/alice/sim/2014/LHC14g3c/195831/001/AliAOD.root
+>>> /xrootdfs/alice/alice/sim/2014/LHC14g3c/195831/001/AliAOD.root
 
 ALICE 데이터셋 조회
 --------------------------------------
