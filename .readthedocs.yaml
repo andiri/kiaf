@@ -7,7 +7,6 @@ build:
 
 sphinx:
   fail_on_warning: true
-  numfig: true
   
 formats:
   - epub
