@@ -99,7 +99,7 @@ Local job을 Condor job으로 수행 시키는 스크립트는 */tutorial* 디�
 각 잡의 로그는 워킹디렉토리 아래 *logs* 폴더에 위치합니다. 또한 *macro* 폴더에는 dagman의 로그, 각 잡에 사용된 macro및 스크립트 등이 있습니다. 
 최종 결과 파일은 *batch_test* 폴더 안에 *merge0_200116135123_AnalysisResults.root* 라는 이름으로 생성 됩니다.
 
-.. node::
+.. note::
 
   아웃풋 갯수에 따라 merge 다음의 숫자가 1부터 차례로 증가하며, 결과파일이 덮어쓰워지는 것을 방지하기 위해 워킹디렉토리 이름이 사용 됩니다.
 
