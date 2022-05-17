@@ -42,7 +42,7 @@ windows 환경에서는 ``putty`` 나 ssh secure shell client 등 ssh 접속 유
 
 .. note::
 
-   putty는 홈페이지(https://www.putty.org)를 통해서 무료로 다운로드가 가능합니다.
+   `putty 홈페이지 <https://www.putty.org>`_ 를 통해서 무료로 다운로드가 가능합니다.
 
    
 리눅스 환경의 터미널에서 아래의 명령어와 옵션을 이용하면 KIAF 서버에 접속이 가능합니다.
