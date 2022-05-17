@@ -14,7 +14,10 @@ KIAF에서는 Alien과 같이 그리드에 위치한 데이터셋이 아닌 로�
 데이터셋 스테이징 요청 메일은 *Data:Sim*, *Period*, *Run Number*, *Variant*, *Pass* 등 필요한 데이터셋의 정보를 기입하여 ``kiaf-data-request<no_spam>kisti.re.kr`` 로 보내 주시면 됩니다. **위 메일은 데이터셋 스테이징을 요청할 때에만 이용하고, 일반적인 문의 는 ``kiaf-support<no_spame>kisti.re.kr`` 를 이용하기를 요청 드립니다.**
 요청하신 데이터셋은 ``/xrootfs/alice`` 디렉토리 아래에 ``Alien Catalogue`` 와 같은 경로로 저장 되어 있습니다.
 
-> /xrootdfs/alice/alice/sim/2014/LHC14g3c/195831/001/AliAOD.root
+.. code-block:: console
+
+  /xrootdfs/alice/alice/sim/2014/LHC14g3c/195831/001/AliAOD.root
+
 
 ALICE 데이터셋 조회
 --------------------------------------
@@ -53,7 +56,10 @@ ALICE 데이터셋 조회
 사용자의 편의를 위하여 요 청한 데이터셋의 전체 파일을 목록화하여 제공합니다. 
 데이터 리스트 파일은 */pool/datalist* 디렉토리 아래에 위치하며, 각 데이터셋의 정보를 기반으로 *type_period_run_pass_variant.txt* 의 파일명으로 존재합니다.
 
-> sim_LHC14g3c_195831_AOD.txt
+.. code-block:: console
+
+  sim_LHC14g3c_195831_AOD.txt
+  
 
 사용자 분석 결과 파일 복사
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
