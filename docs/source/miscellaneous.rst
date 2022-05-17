@@ -28,8 +28,8 @@ Alien Token 발급
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 토큰은 ``alien-token-init`` 명령어를 통해 발급이 가능합니다. 
-다만 KIAF 계정명 과 CERN 계정명이 일치하지 않는 경우, ``alien-token-init`` 뒤에 CERN계정명을 적어 줘야 합니다. 
-이 경우 ``kiafenv -t`` 명령을 통해 정상적으로 토큰을 발급 받기 위해서는 *$HOME/.alice env/alice env.conf* 에 한줄을 추가하여, ``export alien API USER=<CERN_계정명>`` 을 적어주시기 바랍니다.
+다만 KIAF 계정명 과 CERN 계정명이 일치하지 않는 경우, ``alien-token-init`` 뒤에 CERN 계정명을 적어 줘야 합니다. 
+이 경우 ``kiafenv -t`` 명령을 통해 정상적으로 토큰을 발급 받기 위해서는 *$HOME/.alice_env/alice_env.conf* 에 한줄을 추가하여, ``export alien_API_USER=<CERN_계정명>`` 을 적어주시기 바랍니다.
 
 Condor 워커노드에 Alien Token 발급
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -47,7 +47,11 @@ PROOF-Lite 사용법
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 PROOF-Lite는 특별한 설정 없이 AliROOT의 명령을 이용해 실행이 가능 합니다.
-(PROOF-Lite는 팜전체가 아닌 UI머신의 모든 CPU를 사용합니다.) 
+
+.. caution:: 
+
+  PROOF-Lite는 팜전체가 아닌 UI머신의 모든 CPU를 사용합니다. 
+  
 AliROOT를 실행한 후 Proof 세션을 오픈합니다.
 
 .. code-block:: console
@@ -55,14 +59,14 @@ AliROOT를 실행한 후 Proof 세션을 오픈합니다.
   [계정명@<kiaf_url>  ̃]$ aliroot -l
   Warning in <TUnixSystem::SetDisplay>: DISPLAY not set, setting it to <arbitrary_url>:0.0
   root [0] TProof::Open("")
-   +++ Starting PROOF-Lite with 40 workers +++
-  Opening connections to workers: OK (40 workers)
-  Setting up worker servers: OK (40 workers)
-  PROOF set to parallel mode (40 workers)
+   +++ Starting PROOF-Lite with # workers +++
+  Opening connections to workers: OK (# workers)
+  Setting up worker servers: OK (# workers)
+  PROOF set to parallel mode (# workers)
   (class TProof*)0x1c87750
   root [1]
 
-UI의 CPU 40개를 모두 사용하여 40개의 워커가 준비되었음을 확인 할 수 있습니다. 
+UI의 CPU \#개를 모두 사용하여 \#개의 워커가 준비되었음을 확인 할 수 있습니다. 
 
 PoD 사용법
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -126,6 +130,7 @@ PoD 실행 방법
 ``-n`` 옵션은 실행할 PROOF 워커의 갯수입니다. 
 condor를 사용하기 때문에 최대 갯수는 ###개 입니다. 
 또한 PROOF를 condor를 통해 실행하기 때문에 condor의 잡 ID를 할당 받습니다.
+
 PoD가 준비가 되었는지는 ``pod-info -n`` 으로 확인합니다. 
 준비가 완료된 PROOF의 갯수를 표기합니다. 
 condor를 실행하는데 약간의 시간이 필요함으로 지정한 갯수와 맞지 않는 경우 잠시 기다립니다.
