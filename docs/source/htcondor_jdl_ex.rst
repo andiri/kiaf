@@ -48,13 +48,13 @@ Local job을 Condor job으로 수행 시키는 스크립트는 */tutorial* 디�
 
 .. code-block:: console
 
-  cp -r /tutorial/batch_test $HOME/batch_test
+  cp -r /pool/tutorial/batch_test $HOME/batch_test
   
 또는
 
 .. code-block:: console
 
-  cp -r /tutorial/batch_test.tar $HOME/batch_test.tar
+  cp -r /pool/tutorial/batch_test.tar $HOME/batch_test.tar
   tar -xvf batch_test.tar
 
 *batch_test* 폴더 안의 파일 리스트는 아래와 같습니다.
