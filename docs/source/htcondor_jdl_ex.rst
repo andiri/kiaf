@@ -8,7 +8,7 @@ Condor 수행 스크립트
 
 KIAF는 사용자의 편의성을 위해 일부 스크립트를 작성하여 제공하고 있습니다. 
 몇가지 기본설정을 통해 Grid와 유사하게 작업을 제출하는 스크립트에 대해 알아보겠습니다. 
-Local job을 Condor job으로 수행 시키는 스크립트는 */tutorial* 디렉토리 아래에 *runCondor.sh* 라는 파일명으로 위치 합니다. 
+Local job을 Condor job으로 수행 시키는 스크립트는 */pool/tutorial* 디렉토리 아래에 *runCondor.sh* 라는 파일명으로 위치 합니다. 
 해당 스크립트는 분석에 필요한 사용자 변수만을 설정 하고 설정된 변수 값을 통해 */pool/macro/runScript.sh* 을 수행 합니다. 
 *runScript.sh* 파일의 내용은 :doc:`appendix_e` 에 나와 있습니다. 
 
@@ -48,13 +48,13 @@ Local job을 Condor job으로 수행 시키는 스크립트는 */tutorial* 디�
 
 .. code-block:: console
 
-  cp -r /tutorial/batch_test $HOME/batch_test
+  cp -r /pool/tutorial/batch_test $HOME/batch_test
   
 또는
 
 .. code-block:: console
 
-  cp -r /tutorial/batch_test.tar $HOME/batch_test.tar
+  cp -r /pool/tutorial/batch_test.tar $HOME/batch_test.tar
   tar -xvf batch_test.tar
 
 *batch_test* 폴더 안의 파일 리스트는 아래와 같습니다.
