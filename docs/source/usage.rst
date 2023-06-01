@@ -131,6 +131,12 @@ ALICE 패키지는 CERN에서 배포하는 CVMFS 를 통해 제공 됩니다.
 
    export ALICE_ROOT_VERSION="v5-07-20-4"
    
+O2Physics 설정 예시입니다.
+
+.. code-block:: console
+
+   export CVMFS_PACKAGES_VERSION="O2Physics::daily-20230601-0200-1"
+
 ALICE 환경 로드 명령어
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
