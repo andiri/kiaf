@@ -22,8 +22,8 @@ Account Name은 사용자 계정명이 될부분으로 알아보기 쉽게 작�
    ID를 정확하게 만들기 위해서 신청서를 담당자에게 제출하는 메일에 ID를 기입하여 보내주시기를 권장 합니다.
    
 계정이 생성되면 임시 비밀번호와 함께 안내메일이 신청서 상의 사용자 Email로 전송 됩니다.
-작성한 신청서는 KISTI KIAF 담당자에게 제출합니다. 
-계정 요청 담당자 : kiaf-support<NO_SPAM>@kisti.re.kr
+작성한 신청서는 "[ALICE] 계정 신청"의 제목으로 KISTI KIAF 담당자에게 제출합니다. 
+계정 요청 담당자 : gsdc-support<NO_SPAM>@kisti.re.kr
 
 
 KIAF 서버 사용법
